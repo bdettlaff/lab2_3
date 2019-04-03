@@ -30,4 +30,16 @@ public class SimilarityFinderTest {
         assertEquals(similarityFinder.calculateJackardSimilarity(firstSequence, secondSequence), 1.0d, 0.01);
     }
 
+    @Test
+    public void shouldReturnTrueIfAmountOfInvokesIsSix() {
+        int[] firstSequence = {1, 2, 3, 6, 8, 9};
+        int[] secondSequence = {1, 2, 3, 6, 8, 9};
+
+        SequenceSearcherDubler sequenceSearcherDubler = new SequenceSearcherDubler();
+        SimilarityFinder similarityFinder = new SimilarityFinder(sequenceSearcherDubler);
+        similarityFinder.calculateJackardSimilarity(firstSequence,secondSequence);
+
+        assertEquals(sequenceSearcherDubler.getCallCounter(),6);
+    }
+
 }
