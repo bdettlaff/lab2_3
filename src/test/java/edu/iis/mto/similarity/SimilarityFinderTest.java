@@ -42,4 +42,12 @@ public class SimilarityFinderTest {
         assertEquals(sequenceSearcherDubler.getCallCounter(),6);
     }
 
+    @Test
+    public void shouldReturnTrueIfThereIsNoSimilarityBetweenArrays(){
+        int[] firstSequence = {1, 2, 3, 6, 8, 9};
+        int[] secondSequence = {4, 5, 10, 11, 12, 13};
+
+        assertEquals(similarityFinder.calculateJackardSimilarity(firstSequence,secondSequence),0.0,0.01);
+    }
+
 }
