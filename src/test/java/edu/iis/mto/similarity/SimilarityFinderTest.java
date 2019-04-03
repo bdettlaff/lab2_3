@@ -21,4 +21,13 @@ public class SimilarityFinderTest {
 
         assertEquals(1.0d, similarityFinder.calculateJackardSimilarity(firstSequence, secondSequence), 0.01);
     }
+
+    @Test
+    public void shouldReturnTrueIfBothArraysHaveTheSameValues() {
+        int[] firstSequence = {1, 2, 3, 6, 8, 9};
+        int[] secondSequence = {1, 2, 3, 6, 8, 9};
+
+        assertEquals(similarityFinder.calculateJackardSimilarity(firstSequence, secondSequence), 1.0d, 0.01);
+    }
+
 }
