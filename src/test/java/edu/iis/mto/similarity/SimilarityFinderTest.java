@@ -50,4 +50,12 @@ public class SimilarityFinderTest {
         assertEquals(similarityFinder.calculateJackardSimilarity(firstSequence,secondSequence),0.0,0.01);
     }
 
+    @Test
+    public void shouldReturnTrueIfSecondArrayIsEmpty(){
+        int[] firstSequence = {1, 2, 3, 6, 8, 9};
+        int[] secondSequence = {};
+
+        assertEquals(similarityFinder.calculateJackardSimilarity(firstSequence,secondSequence),0.0,0.01);
+    }
+
 }
