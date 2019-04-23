@@ -18,4 +18,16 @@ public class SimilarityFinderTest {
         assertEquals(sequenceSearcherDouble.getCounter(), 6);
     }
 
+    @Test
+    public void shouldReturnTrueIfBothSequencesAreEmpty(){
+        int[] firstSequence = {};
+        int[] secondSequence = {};
+
+        SequenceSearcherDouble sequenceSearcherDouble = new SequenceSearcherDouble();
+        SimilarityFinder similarityFinder = new SimilarityFinder(sequenceSearcherDouble);
+
+
+        assertEquals(similarityFinder.calculateJackardSimilarity(firstSequence,secondSequence),1.0d,0.01);
+    }
+
 }
