@@ -26,8 +26,17 @@ public class SimilarityFinderTest {
         SequenceSearcherDouble sequenceSearcherDouble = new SequenceSearcherDouble();
         SimilarityFinder similarityFinder = new SimilarityFinder(sequenceSearcherDouble);
 
-
         assertEquals(similarityFinder.calculateJackardSimilarity(firstSequence,secondSequence),1.0d,0.01);
     }
 
+    @Test
+    public void shouldReturnTrueIfBothArraysHaveTheSameValue(){
+        int[] firstSequence = {1, 2, 3, 6, 8, 9};
+        int[] secondSequence = {1, 2, 3, 6, 8, 9};
+
+        SequenceSearcherDouble sequenceSearcherDouble = new SequenceSearcherDouble();
+        SimilarityFinder similarityFinder = new SimilarityFinder(sequenceSearcherDouble);
+
+        assertEquals(similarityFinder.calculateJackardSimilarity(firstSequence,secondSequence),0,0.01);
+    }
 }
